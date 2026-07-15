@@ -6,10 +6,34 @@ import { STATUS_FEED } from "@/lib/config";
 
 const VISIBLE_ROWS = 4;
 const PRODUCT_WINDOWS = [
-  { title: "QR Ordering", metric: "12 orders", accent: "bg-amber" },
-  { title: "Rental Billing", metric: "$1,240 due", accent: "bg-signal" },
-  { title: "Laundry Machines", metric: "3 active", accent: "bg-slate" },
-  { title: "Market Data", metric: "Auto-post 8:00", accent: "bg-amber" },
+  {
+    title: "QR Order",
+    metric: "តុ 07 · $18.50",
+    detail: "New order received",
+    bars: ["w-11/12", "w-7/12", "w-9/12"],
+    accent: "bg-amber",
+  },
+  {
+    title: "ABA / KHQR",
+    metric: "Payment confirmed",
+    detail: "Invoice #A-204",
+    bars: ["w-8/12", "w-10/12", "w-5/12"],
+    accent: "bg-signal",
+  },
+  {
+    title: "Room Invoice",
+    metric: "បន្ទប់ 4B · $185",
+    detail: "Monthly bill generated",
+    bars: ["w-10/12", "w-6/12", "w-8/12"],
+    accent: "bg-slate",
+  },
+  {
+    title: "Telegram Post",
+    metric: "Gold update · 08:00",
+    detail: "Scheduled auto-post",
+    bars: ["w-9/12", "w-11/12", "w-6/12"],
+    accent: "bg-amber",
+  },
 ];
 
 export default function StatusPanel() {
@@ -45,13 +69,13 @@ export default function StatusPanel() {
             </div>
             <div className="rounded-xl bg-paper p-3 text-ink">
               <div className="text-lg font-semibold">{item.metric}</div>
-              <div className="mt-3 h-2 rounded-full bg-line">
-                <div className={`h-2 w-2/3 rounded-full ${item.accent}`} />
-              </div>
-              <div className="mt-3 grid grid-cols-3 gap-1.5">
-                <span className="h-8 rounded-lg bg-paper border border-line" />
-                <span className="h-8 rounded-lg bg-signal/10" />
-                <span className="h-8 rounded-lg bg-amber/20" />
+              <div className="mt-1 text-[11px] font-medium text-ink-soft">{item.detail}</div>
+              <div className="mt-3 space-y-1.5">
+                {item.bars.map((bar, barIndex) => (
+                  <div key={barIndex} className="h-2 rounded-full bg-line">
+                    <div className={`h-2 rounded-full ${item.accent} ${bar}`} />
+                  </div>
+                ))}
               </div>
             </div>
           </motion.div>

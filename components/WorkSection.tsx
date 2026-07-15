@@ -25,7 +25,7 @@ export default function WorkSection() {
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.4, ease: "easeOut", delay: (index % 3) * 0.06 }}
             className={`group overflow-hidden rounded-2xl border border-line bg-card shadow-[0_18px_48px_-34px_rgba(18,24,26,0.5)] transition-transform duration-300 hover:-translate-y-1 ${
-              index < 2 ? "lg:col-span-3" : "lg:col-span-2"
+              "lg:col-span-3"
             }`}
           >
             <div className="relative aspect-[16/10] w-full overflow-hidden bg-paper">
@@ -43,8 +43,7 @@ export default function WorkSection() {
               <h3 className="mt-2 font-display text-lg font-semibold text-ink">
                 {project.title}
               </h3>
-              <p className="mt-3 text-sm leading-relaxed text-ink-soft">{project.problem}</p>
-              <p className="mt-2 text-sm leading-relaxed text-ink-soft">{project.solution}</p>
+              <p className="mt-3 text-sm leading-relaxed text-ink-soft">{project.solution}</p>
 
               <ul className="mt-4 flex flex-wrap gap-1.5">
                 {project.capabilities.map((cap) => (

@@ -22,7 +22,7 @@ export default function FinalCtaSection() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-60px" }}
         transition={{ duration: 0.45, ease: "easeOut" }}
-        className="rounded-3xl border border-line bg-ink px-6 py-12 text-center sm:px-12 sm:py-16"
+        className="rounded-3xl border border-paper/10 bg-ink px-6 py-12 text-center shadow-[0_24px_80px_-48px_rgba(18,24,26,0.8)] sm:px-12 sm:py-16"
       >
         <h2 className="mx-auto max-w-xl font-display text-2xl font-semibold leading-snug text-paper sm:text-3xl">
           {FINAL_CTA.headline}
@@ -41,7 +41,7 @@ export default function FinalCtaSection() {
                 className={`rounded-full border px-4 py-2 text-sm font-medium transition-colors ${
                   isSelected
                     ? "border-amber bg-amber text-ink"
-                    : "border-paper/20 bg-transparent text-paper/80 hover:border-paper/40"
+                    : "border-paper/20 bg-paper/8 text-paper/80 backdrop-blur hover:border-paper/40"
                 }`}
               >
                 {type}
@@ -55,7 +55,7 @@ export default function FinalCtaSection() {
           target="_blank"
           rel="noopener noreferrer"
           onClick={() => track("final_telegram_click", { businessType: selected ?? "unspecified" })}
-          className="mt-8 inline-flex items-center justify-center rounded-full bg-amber px-7 py-3 text-sm font-semibold text-ink transition-colors hover:bg-amber-dark"
+          className="mt-8 inline-flex items-center justify-center rounded-full bg-amber px-7 py-3 text-sm font-semibold text-ink shadow-[0_0_34px_rgba(232,163,61,0.24)] transition-colors hover:bg-amber-dark"
         >
           {FINAL_CTA.primaryCta}
         </a>
