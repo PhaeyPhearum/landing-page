@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+:root {
+  --color-paper: #fafaf8;
+  --color-ink: #12181a;
+  --color-ink-soft: #4a5559;
+  --color-signal: #0e6b5c;
+  --color-signal-dark: #0a5245;
+  --color-amber: #e8a33d;
+  --color-amber-dark: #cb8a28;
+  --color-slate: #456170;
+  --color-line: #e1e0d9;
+  --color-card: #ffffff;
+}
+
+@theme inline {
+  --color-paper: var(--color-paper);
+  --color-ink: var(--color-ink);
+  --color-ink-soft: var(--color-ink-soft);
+  --color-signal: var(--color-signal);
+  --color-signal-dark: var(--color-signal-dark);
+  --color-amber: var(--color-amber);
+  --color-amber-dark: var(--color-amber-dark);
+  --color-slate: var(--color-slate);
+  --color-line: var(--color-line);
+  --color-card: var(--color-card);
+  --font-display: var(--font-kantumruy-pro);
+  --font-body: var(--font-kantumruy-pro);
+  --font-mono: var(--font-plex-mono);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  line-height: 1.65; /* Khmer stacked vowels/diacritics need more vertical room than Latin */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.status-dot {
+  box-shadow: 0 0 0 3px rgba(14, 107, 92, 0.12);
+}
+
+.status-dot--pending {
+  box-shadow: 0 0 0 3px rgba(232, 163, 61, 0.15);
+}
+
+::selection {
+  background: var(--color-signal);
+  color: var(--color-paper);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-signal);
+  outline-offset: 3px;
+}

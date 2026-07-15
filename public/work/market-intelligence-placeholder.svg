@@ -1,0 +1,35 @@
+<svg width="1200" height="750" viewBox="0 0 1200 750" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="750" fill="#101719"/>
+  <rect x="64" y="60" width="1072" height="630" rx="36" fill="#FAFAF8"/>
+  <rect x="96" y="92" width="1008" height="76" rx="20" fill="#162024"/>
+  <circle cx="134" cy="130" r="8" fill="#E8A33D"/>
+  <circle cx="162" cy="130" r="8" fill="#0E6B5C"/>
+  <circle cx="190" cy="130" r="8" fill="#456170"/>
+  <text x="232" y="137" fill="#FAFAF8" font-family="Arial, sans-serif" font-size="24" font-weight="700">Cambodia Market Intelligence</text>
+  <rect x="96" y="204" width="312" height="166" rx="22" fill="#FFF8EA" stroke="#E8A33D" stroke-width="2"/>
+  <text x="126" y="252" fill="#12181A" font-family="Arial, sans-serif" font-size="22" font-weight="700">Gold API</text>
+  <text x="126" y="302" fill="#CB8A28" font-family="Arial, sans-serif" font-size="46" font-weight="700">$3,348.20</text>
+  <text x="126" y="336" fill="#4A5559" font-family="Arial, sans-serif" font-size="18">Real-time source update</text>
+  <rect x="444" y="204" width="312" height="166" rx="22" fill="#EEF7F4" stroke="#0E6B5C" stroke-width="2"/>
+  <text x="474" y="252" fill="#12181A" font-family="Arial, sans-serif" font-size="22" font-weight="700">Cambodia Calculation</text>
+  <text x="474" y="302" fill="#0E6B5C" font-family="Arial, sans-serif" font-size="46" font-weight="700">4.33M</text>
+  <text x="474" y="336" fill="#4A5559" font-family="Arial, sans-serif" font-size="18">Per damleng after rules</text>
+  <rect x="792" y="204" width="312" height="166" rx="22" fill="#EEF3F5" stroke="#456170" stroke-width="2"/>
+  <text x="822" y="252" fill="#12181A" font-family="Arial, sans-serif" font-size="22" font-weight="700">Telegram Auto Post</text>
+  <text x="822" y="302" fill="#456170" font-family="Arial, sans-serif" font-size="46" font-weight="700">08:00</text>
+  <text x="822" y="336" fill="#4A5559" font-family="Arial, sans-serif" font-size="18">Scheduled background job</text>
+  <rect x="96" y="414" width="660" height="214" rx="26" fill="#FFFFFF" stroke="#E1E0D9"/>
+  <path d="M138 570 C210 486 286 542 358 470 C430 398 508 430 574 382 C640 334 694 354 724 318" stroke="#0E6B5C" stroke-width="8" stroke-linecap="round"/>
+  <path d="M138 590 C224 548 274 574 350 530 C426 486 514 510 594 462 C656 424 690 424 724 398" stroke="#E8A33D" stroke-width="8" stroke-linecap="round"/>
+  <line x1="138" y1="606" x2="724" y2="606" stroke="#E1E0D9" stroke-width="2"/>
+  <line x1="138" y1="448" x2="724" y2="448" stroke="#E1E0D9" stroke-width="2"/>
+  <text x="132" y="460" fill="#12181A" font-family="Arial, sans-serif" font-size="20" font-weight="700">Interactive Dashboard</text>
+  <rect x="792" y="414" width="312" height="214" rx="26" fill="#162024"/>
+  <text x="826" y="462" fill="#FAFAF8" font-family="Arial, sans-serif" font-size="22" font-weight="700">Automation Flow</text>
+  <rect x="826" y="494" width="238" height="34" rx="10" fill="#FAFAF8" fill-opacity="0.12"/>
+  <rect x="826" y="542" width="196" height="34" rx="10" fill="#E8A33D" fill-opacity="0.28"/>
+  <rect x="826" y="590" width="222" height="34" rx="10" fill="#0E6B5C" fill-opacity="0.3"/>
+  <circle cx="1058" cy="510" r="8" fill="#E8A33D"/>
+  <circle cx="1016" cy="558" r="8" fill="#0E6B5C"/>
+  <circle cx="1042" cy="606" r="8" fill="#E8A33D"/>
+</svg>
