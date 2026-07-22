@@ -31,8 +31,8 @@ export const BRAND = {
 // --- CONTACT -------------------------------------------------------------
 // TODO: replace with your real Telegram username and email.
 export const CONTACT = {
-  telegramUsername: "sokhalabs", // no @, no https://
-  email: "hello@sokhalabs.com", // TODO: replace
+  telegramUsername: "phearumphaey", // no @, no https://
+  email: "pheayphearum.com", // TODO: replace
 };
 
 function buildTelegramUrl(prefilledMessage: string) {
@@ -175,14 +175,14 @@ export const SOLUTIONS = [
 // TODO: replace image paths with real screenshots before launch.
 // Placeholders live in /public/work/ — swap the files, keep the names,
 // or update the `image` path below.
-export const WORK_HEADING = "ប្រព័ន្ធដែលអាជីវកម្មអាចស្រមៃប្រើបានភ្លាម"; // Systems businesses can imagine using
-export const WORK_SUBHEADING = "មើលផលិតផលមុនសិន។ បន្ទាប់មកទើបគិតថាតើវាអាចជួយអាជីវកម្មអ្នកកាត់បន្ថយការងារ និងរកចំណូលបានយ៉ាងដូចម្តេច។";
+export const WORK_HEADING = "ប្រព័ន្ធអាជីវកម្ម"; // Systems businesses can imagine using
+export const WORK_SUBHEADING = "មានគំនិតអាជីវកម្មតែមិនដឹងថាគួរពិភាក្សារជាមួយអ្នកណា 😪 ឈប់បារម្មណ៏ទៀតទៅសូមទាក់ទងមកយើង យើងនិងជួយដោយមិនគិតថ្លៃ។ សូមឆាតមក Telegram យើងឥឡូវនេះ!";
 export const VIEW_DEMO_LABEL = "មើល Demo"; // View demo — "Demo" kept as common loanword
 
 export const PROJECTS = [
   {
     category: "ម្ហូបអាហារ", // Food & Beverage
-    title: "QR Menu & Restaurant Ordering System",
+    title: "QR Menu, POS & Ordering System",
     problem: "ភោជនីយដ្ឋានបាត់បង់ពេលជាមួយមីនុយក្រដាស និងការកត់ត្រាដោយដៃ។",
     solution: "អតិថិជនស្កេន QR កម្មង់ បុគ្គលិកបញ្ជាក់ ហើយផ្ទះបាយឃើញ Order ភ្លាម។",
     capabilities: ["QR Menu", "Staff order", "Kitchen", "ABA QR"],
@@ -200,7 +200,7 @@ export const PROJECTS = [
   },
   {
     category: "អចលនទ្រព្យ", // Property
-    title: "ប្រព័ន្ធគ្រប់គ្រងផ្ទះជួល & វិក្កយបត្រប្រចាំខែ",
+    title: "ប្រព័ន្ធគ្រប់គ្រង អាផាតមិន ខុនដូ រឺ បន្ទប់ជួល & វិក្កយបត្រប្រចាំខែ",
     problem: "ម្ចាស់អាផាតមិនគិតទឹក ភ្លើង និងវិក្កយបត្រដោយដៃរាល់ខែ។",
     solution: "Dashboard សម្រាប់បន្ទប់ អ្នកជួល លេខអាន និងវិក្កយបត្រប្រចាំខែ។",
     capabilities: ["Rooms", "Billing", "Utilities", "Payments"],
@@ -209,9 +209,9 @@ export const PROJECTS = [
   },
   {
     category: "សេវាដោយខ្លួនឯង", // Self-service
-    title: "ប្រព័ន្ធបោកគក់ដោយខ្លួនឯង",
-    problem: "ម៉ាស៊ីនបោកគក់គ្មាន QR payment និងពិបាកត្រួតពិនិត្យពីចម្ងាយ។",
-    solution: "អតិថិជនបង់ QR ហើយប្រព័ន្ធបើកម៉ាស៊ីន និងបង្ហាញស្ថានភាពឱ្យម្ចាស់។",
+    title: "Self-Service Laundry System",
+    problem: "ប្រព័ន្ធបោកគក់ដោយខ្លួនឯង ម៉ាស៊ីនបោកគក់គ្មាន QR payment និងពិបាកត្រួតពិនិត្យពីចម្ងាយ។",
+    solution: "អតិថិជនបង់ QR ហើយប្រព័ន្ធបើកម៉ាស៊ីន និងបង្ហាញស្ថានភាពឱ្យម្ចាស់។ ប្រើបច្ចេកវិទ្យាទំនើបដូចជា ESP32, Arduino, Smart Relay Control System, loT...",
     capabilities: ["QR payment", "Machine", "Remote", "Dashboard"],
     image: "/work/laundry-placeholder.svg",
     demoUrl: "",

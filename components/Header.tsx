@@ -6,7 +6,7 @@ import { track } from "@/lib/analytics";
 export default function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-line bg-paper/92 backdrop-blur-md">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         <a href="#" className="font-display text-lg font-semibold tracking-tight text-ink">
           {BRAND.name}
         </a>
@@ -28,7 +28,7 @@ export default function Header() {
           target="_blank"
           rel="noopener noreferrer"
           onClick={() => track("header_telegram_click")}
-          className="rounded-full bg-signal px-4 py-2 text-sm font-semibold text-paper transition-colors hover:bg-signal-dark md:px-5"
+          className="vh-btn-gold rounded-2xl bg-signal px-4 py-2 text-sm font-semibold text-paper transition-colors hover:bg-signal-dark md:px-5"
         >
           {HEADER_CTA}
         </a>

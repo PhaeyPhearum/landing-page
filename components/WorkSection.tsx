@@ -10,7 +10,7 @@ export default function WorkSection() {
   return (
     <section id="work" className="mx-auto max-w-6xl px-6 py-16 sm:py-20">
       <div className="grid gap-4 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
-        <h2 className="font-display text-2xl font-semibold leading-snug text-ink sm:text-3xl">
+        <h2 className="font-display font-semibold leading-snug text-ink text-2xl sm:text-4xl">
           {WORK_HEADING}
         </h2>
         <p className="leading-relaxed text-ink-soft lg:max-w-xl lg:justify-self-end">{WORK_SUBHEADING}</p>

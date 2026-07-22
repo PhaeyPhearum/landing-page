@@ -40,6 +40,61 @@ body {
   line-height: 1.65; /* Khmer stacked vowels/diacritics need more vertical room than Latin */
 }
 
+:root {
+    --vh-gold: oklch(72% .18 60);
+    --vh-gold-rgb: 200, 160, 60;
+    --vh-gold-dim: oklch(55% .12 60);
+    --vh-navy-deep: oklch(14% .02 250);
+}
+
+.glassVariant {
+    background-color: #0000;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    transition: background .2s ease-in-out;
+}
+
+.vh-btn-gold {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--vh-gold), var(--vh-gold-dim));
+    color: #fff;
+    font-weight: 700;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, .25);
+    box-shadow: 0 12px 36px -10px #1b7cf28c, inset 0 1px #ffffff38;
+    transition: box-shadow .3s ease;
+}
+
+.vh-btn-blue {
+    position: relative;
+    overflow: hidden;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, .25);
+    background: linear-gradient(135deg, #2a8bff 0%, #1b7cf2 60%, #0e56b8 100%);
+    transition: transform .25s, box-shadow .25s;
+    box-shadow: 0 12px 36px -10px #1b7cf28c, inset 0 1px #ffffff38;
+}
+
+.vh-btn-gold:before,
+.vh-btn-blue::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -60%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .25), transparent);
+    animation: vh-gold-shimmer 3s ease-in-out infinite;
+}
+
+@keyframes vh-gold-shimmer {
+  0% {
+      left: -60%;
+  }
+  100% {
+      left: 120%;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
@@ -55,6 +110,38 @@ body {
 
 .status-dot--pending {
   box-shadow: 0 0 0 3px rgba(232, 163, 61, 0.15);
+}
+
+.marquee-mask {
+  mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
+}
+
+.animate-scroll-x {
+  animation: scroll-x 34s linear infinite;
+}
+
+.animate-scroll-x-reverse {
+  animation: scroll-x-reverse 38s linear infinite;
+}
+
+@keyframes scroll-x {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scroll-x-reverse {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
 }
 
 ::selection {

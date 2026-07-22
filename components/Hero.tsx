@@ -11,7 +11,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_10%,rgba(232,163,61,0.22),transparent_28%),radial-gradient(circle_at_80%_18%,rgba(14,107,92,0.26),transparent_30%),linear-gradient(135deg,#101719_0%,#182124_45%,#0d1113_100%)]" />
       <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-paper to-transparent" />
 
-      <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-6 pb-20 pt-14 sm:pb-28 sm:pt-20 lg:grid-cols-[0.92fr_1.08fr] lg:gap-10">
+      <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-6 pb-20 pt-14 sm:pb-28 sm:pt-20 lg:grid-cols-[0.92fr_1.08fr] lg:gap-20">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
@@ -46,14 +46,14 @@ export default function Hero() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => track("hero_telegram_click")}
-              className="inline-flex items-center justify-center rounded-full bg-amber px-6 py-3 text-sm font-semibold text-ink shadow-[0_0_30px_rgba(232,163,61,0.24)] transition-colors hover:bg-amber-dark"
+              className="vh-btn-gold inline-flex items-center justify-center rounded-2xl bg-amber px-8 py-4 text-sm font-semibold text-ink shadow-[0_0_30px_rgba(232,163,61,0.24)] transition-colors hover:bg-amber-dark"
             >
               {HERO.primaryCta}
             </a>
             <a
               href="#work"
               onClick={() => track("hero_view_work_click")}
-              className="inline-flex items-center justify-center rounded-full border border-paper/18 bg-paper/8 px-6 py-3 text-sm font-semibold text-paper transition-colors hover:bg-paper/14"
+              className="vh-btn-blue inline-flex items-center justify-center rounded-2xl border border-paper/18 bg-paper/8 px-8 py-4 text-sm font-semibold text-paper transition-colors hover:bg-paper/14"
             >
               {HERO.secondaryCta}
             </a>
