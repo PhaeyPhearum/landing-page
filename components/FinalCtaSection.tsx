@@ -16,13 +16,13 @@ export default function FinalCtaSection() {
   }
 
   return (
-    <section className="mx-auto max-w-6xl px-6 py-16 sm:py-24">
+    <section id="final-cta" className="mx-auto max-w-6xl px-6 py-12 sm:py-18">
       <motion.div
         initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-60px" }}
         transition={{ duration: 0.45, ease: "easeOut" }}
-        className="rounded-3xl border border-paper/10 bg-ink px-6 py-12 text-center shadow-[0_24px_80px_-48px_rgba(18,24,26,0.8)] sm:px-12 sm:py-16"
+        className="darkMoonVariant rounded-3xl border border-paper/10 bg-ink px-6 py-12 text-center shadow-[0_24px_80px_-48px_rgba(18,24,26,0.8)] sm:px-12 sm:py-16"
       >
         <h2 className="mx-auto max-w-xl font-display text-2xl font-semibold leading-snug text-paper sm:text-3xl">
           {FINAL_CTA.headline}

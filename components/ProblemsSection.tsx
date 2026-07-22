@@ -14,7 +14,7 @@ const ICONS: Record<string, LucideIcon> = {
 export default function ProblemsSection() {
   return (
     <section className="bg-[#eef5f1]">
-      <div className="mx-auto max-w-6xl px-6 py-16 sm:py-20">
+      <div className="mx-auto max-w-7xl px-6 py-12 sm:py-16">
         <div className="max-w-2xl">
         <h2 className="font-display text-2xl font-semibold leading-snug text-ink sm:text-3xl">
           {PROBLEMS_HEADING}

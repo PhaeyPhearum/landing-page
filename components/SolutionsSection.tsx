@@ -27,7 +27,7 @@ export default function SolutionsSection() {
 
   return (
     <section id="solutions" className="bg-ink">
-      <div className="mx-auto max-w-6xl px-6 py-16 sm:py-20">
+      <div className="mx-auto max-w-7xl px-6 py-12 sm:py-16">
         <div className="max-w-2xl">
           <h2 className="font-display text-2xl font-semibold leading-snug text-paper sm:text-3xl">
             {SOLUTIONS_HEADING}

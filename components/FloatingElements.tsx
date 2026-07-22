@@ -11,6 +11,29 @@ import {
   Shirt,
   X,
 } from "lucide-react";
+import { DEFAULT_TELEGRAM_URL } from "@/lib/config";
+import { track } from "@/lib/analytics";
+
+type WidgetMode = "hero" | "projects" | "bottom";
+
+function getWidgetMode() {
+  const scrollY = window.scrollY;
+  const viewport = window.innerHeight;
+  const pageHeight = document.documentElement.scrollHeight - viewport;
+
+  if (pageHeight > 0 && scrollY / pageHeight > 0.72) return "bottom";
+
+  const work = document.getElementById("work");
+  if (work) {
+    const workTop = work.getBoundingClientRect().top + scrollY;
+    const workBottom = workTop + work.offsetHeight;
+    if (scrollY + viewport * 0.45 >= workTop && scrollY <= workBottom) {
+      return "projects";
+    }
+  }
+
+  return "hero";
+}
 
 type FloatingItem = {
   id: string;
@@ -24,6 +47,7 @@ type FloatingItem = {
   iconTone: string;
   external?: boolean;
 };
+
 
 const FLOATING_ITEMS: FloatingItem[] = [
   {
@@ -73,13 +97,15 @@ const FLOATING_ITEMS: FloatingItem[] = [
   },
 ];
 
+
 const ROTATION_INTERVAL = 7000;
 
 export default function FloatingElements() {
+  const [isVisible, setIsVisible] = useState(false);
+  const [mode, setMode] = useState<WidgetMode>("hero");
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [isDismissed, setIsDismissed] = useState(false);
-  const [isVisible, setIsVisible] = useState(false);
   const [showConsultation, setShowConsultation] = useState(false);
 
   const currentItem = useMemo(
@@ -89,22 +115,46 @@ export default function FloatingElements() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollY = window.scrollY;
-      const pageHeight =
-        document.documentElement.scrollHeight - window.innerHeight;
-
-      // Show after the visitor starts scrolling.
-      setIsVisible(scrollY > 180);
-
-      // Near the bottom, replace project promotion with Telegram CTA.
-      setShowConsultation(pageHeight > 0 && scrollY / pageHeight > 0.72);
+      setIsVisible(window.scrollY > 220);
+      setMode(getWidgetMode());
     };
 
     handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleScroll);
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
   }, []);
+
+  const config = {
+    hero: {
+      label: "មើលគម្រោង",
+      href: "#work",
+      external: false,
+      icon: ArrowRight,
+      onClick: () => track("floating_view_work_click"),
+    },
+    projects: {
+      label: "មើល Live Demo",
+      href: "https://goldprice.qrtag.shop",
+      external: true,
+      icon: ExternalLink,
+      onClick: () => track("floating_live_demo_click"),
+    },
+    bottom: {
+      label: "ពិភាក្សាតាម Telegram",
+      href: DEFAULT_TELEGRAM_URL,
+      external: true,
+      icon: MessageCircle,
+      onClick: () => track("floating_telegram_click"),
+    },
+  }[mode];
+
+  const Icon = config.icon;
+
 
   useEffect(() => {
     if (isPaused || isDismissed || showConsultation) return;
@@ -139,8 +189,8 @@ export default function FloatingElements() {
 
   const telegramUrl = `https://t.me/${telegramUsername}?text=${telegramMessage}`;
 
+
   return (
-    <>
     <div
     className={[
         "pointer-events-none fixed inset-x-0 bottom-0 z-[9994]",
@@ -150,80 +200,25 @@ export default function FloatingElements() {
         isVisible
         ? "translate-y-0 opacity-100"
         : "translate-y-5 opacity-0",
-    ].join(" ")}
-    >
-    <div className="mx-auto flex w-full max-w-[1600px] items-end justify-between gap-3">
-        {/* Left promotional element */}
-        <div
-        id="floating-elements-left"
-        className={[
-            "pointer-events-auto relative shrink-0",
-            "transition-all duration-300",
-            isPaused ? "scale-[1.02]" : "scale-100",
         ].join(" ")}
-        onMouseEnter={() => setIsPaused(true)}
-        onMouseLeave={() => setIsPaused(false)}
-        onFocusCapture={() => setIsPaused(true)}
-        onBlurCapture={() => setIsPaused(false)}
         >
-        <button
-            type="button"
-            aria-label="មើលការផ្តល់ជូនពិសេស"
-            className={[
-            "group relative flex items-center gap-2",
-            "rounded-2xl border border-white/15",
-            "bg-[#101817]/90 p-2 pr-3",
-            "shadow-[0_16px_45px_rgba(0,0,0,0.28)]",
-            "backdrop-blur-xl",
-            "transition-all duration-300",
-            "hover:-translate-y-1",
-            "hover:border-amber-300/35",
-            "hover:shadow-[0_20px_60px_rgba(0,0,0,0.34)]",
-            "focus-visible:outline-none",
-            "focus-visible:ring-2",
-            "focus-visible:ring-amber-300",
-            "sm:p-2.5 sm:pr-4",
-            ].join(" ")}
+        <div className="mx-auto flex w-full max-w-[1600px] items-end justify-between gap-3">
+            {/* Left promotional element */}
+            <div
+        className={`pointer-events-none fixed inset-x-0 bottom-4 z-[60] flex px-4 transition-all duration-300 sm:bottom-6 sm:justify-end sm:px-6 ${
+            isVisible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
+        }`}
         >
-            {/* Soft glow */}
-            <span className="pointer-events-none absolute inset-0 overflow-hidden rounded-2xl">
-            <span className="absolute -left-6 -top-8 h-20 w-20 rounded-full bg-amber-300/20 blur-2xl transition-opacity duration-300 group-hover:opacity-100" />
-            </span>
-
-            <span className="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-amber-300 to-amber-500 shadow-[0_8px_24px_rgba(245,180,40,0.28)] sm:h-14 sm:w-14">
-            <img
-                src="https://rexusdomain.com/images/rexus-flash-sale.png"
-                alt=""
-                className={[
-                "h-10 w-10 object-contain sm:h-12 sm:w-12",
-                "drop-shadow-[0_4px_10px_rgba(0,0,0,0.2)]",
-                "transition-transform duration-300",
-                "group-hover:scale-110 group-hover:-rotate-3",
-                ].join(" ")}
-                loading="lazy"
-                decoding="async"
-            />
-            </span>
-
-            <span className="relative hidden min-w-0 text-left sm:block">
-            <span className="block text-[9px] font-semibold uppercase tracking-[0.18em] text-amber-300">
-                សេវាកម្មពិសេស
-            </span>
-
-            <span className="mt-0.5 block whitespace-nowrap text-xs font-semibold text-white">
-                ពិគ្រោះគម្រោងឥតគិតថ្លៃ
-            </span>
-            </span>
-
-            {/* Notification badge */}
-            <span className="absolute -right-2 -top-2 flex h-7 w-7 items-center justify-center">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-500 opacity-45" />
-
-            <span className="relative inline-flex h-6 min-w-6 items-center justify-center rounded-full border-2 border-[#101817] bg-red-600 px-1 text-[9px] font-bold text-white shadow-lg">
-                NEW
-            </span>
-            </span>
-        </button>
+            <a
+                href={config.href}
+                target={config.external ? "_blank" : undefined}
+                rel={config.external ? "noopener noreferrer" : undefined}
+                onClick={config.onClick}
+                className="pointer-events-auto mx-auto inline-flex max-w-[calc(100vw-2rem)] items-center justify-center gap-2 rounded-2xl border border-paper/14 bg-ink/92 px-5 py-3 text-sm font-semibold text-paper shadow-[0_18px_60px_-32px_rgba(0,0,0,0.78)] backdrop-blur-xl transition-all hover:-translate-y-0.5 hover:border-amber/35 hover:bg-ink sm:mx-0"
+            >
+                {config.label}
+                <Icon className="h-4 w-4 text-amber" />
+            </a>
         </div>
 
         {/* Right project / Telegram card */}
@@ -259,7 +254,7 @@ export default function FloatingElements() {
 
                 {/* Your existing right-side content */}
                 
-                <div className="relative overflow-hidden rounded-2xl border border-white/15 bg-[#101817]/90 shadow-[0_18px_70px_rgba(0,0,0,0.28)] backdrop-blur-xl">
+                <div className="nightLightVariant relative overflow-hidden rounded-2xl border border-white/15 bg-[#101817]/90 shadow-[0_18px_70px_rgba(0,0,0,0.28)] backdrop-blur-xl">
                     <div
                     className={[
                         "pointer-events-none absolute inset-0 bg-gradient-to-br",
@@ -384,6 +379,5 @@ export default function FloatingElements() {
             </div>
         </div>
     </div>
-    </>
   );
 }

@@ -22,7 +22,7 @@
 // Brand name kept in Latin script — common for Cambodian tech/SME brands
 // even on Khmer-first sites — but reconsider if a Khmer name fits better.
 export const BRAND = {
-  name: "Sokha Labs",
+  name: "PHEARUM",
   shortName: "Sokha",
   tagline: "បច្ចេកវិទ្យាអាជីវកម្ម សម្រាប់របៀបដែលកម្ពុជាធ្វើអាជីវកម្មពិតប្រាកដ។",
   domain: "https://sokhalabs.com", // TODO: replace with real domain
@@ -175,46 +175,103 @@ export const SOLUTIONS = [
 // TODO: replace image paths with real screenshots before launch.
 // Placeholders live in /public/work/ — swap the files, keep the names,
 // or update the `image` path below.
-export const WORK_HEADING = "ប្រព័ន្ធអាជីវកម្ម"; // Systems businesses can imagine using
-export const WORK_SUBHEADING = "មានគំនិតអាជីវកម្មតែមិនដឹងថាគួរពិភាក្សារជាមួយអ្នកណា 😪 ឈប់បារម្មណ៏ទៀតទៅសូមទាក់ទងមកយើង យើងនិងជួយដោយមិនគិតថ្លៃ។ សូមឆាតមក Telegram យើងឥឡូវនេះ!";
+export const WORK_HEADING = "ប្រព័ន្ធអាជីវកម្មដែលយើងបានបង្កើត";
+export const WORK_SUPPORT_LINE = "Business Systems We’ve Built";
+export const WORK_SUBHEADING =
+  "គម្រោងជាក់ស្តែងសម្រាប់ភោជនីយដ្ឋាន អាជីវកម្មជួលបន្ទប់ បោកគក់ ការទូទាត់ ស្វ័យប្រវត្តិកម្ម និងព័ត៌មានទីផ្សារ។";
 export const VIEW_DEMO_LABEL = "មើល Demo"; // View demo — "Demo" kept as common loanword
 
 export const PROJECTS = [
   {
-    category: "ម្ហូបអាហារ", // Food & Beverage
+    category: "RESTAURANT SYSTEM",
     title: "QR Menu, POS & Ordering System",
     problem: "ភោជនីយដ្ឋានបាត់បង់ពេលជាមួយមីនុយក្រដាស និងការកត់ត្រាដោយដៃ។",
-    solution: "អតិថិជនស្កេន QR កម្មង់ បុគ្គលិកបញ្ជាក់ ហើយផ្ទះបាយឃើញ Order ភ្លាម។",
-    capabilities: ["QR Menu", "Staff order", "Kitchen", "ABA QR"],
-    image: "/work/qr-ordering-placeholder.svg",
+    solution: "អតិថិជនមើលមីនុយ កម្មង់ បុគ្គលិកបញ្ជាក់ ភ្ជាប់ការទូទាត់ និងផ្ញើដំណឹងប្រតិបត្តិការ។",
+    capabilities: ["QR Ordering", "ABA PayWay", "Telegram", "Dashboard"],
+    status: "Payment Integrated",
+    image: "/web-design.png",
     demoUrl: "", // TODO: add live demo link
   },
   {
-    category: "Market Intelligence",
-    title: "Cambodia Market Intelligence Platform",
-    problem: "អាជីវកម្មត្រូវការទិន្នន័យទីផ្សារថ្មីៗ និងការផ្សាយអាប់ដេតទាន់ពេល។",
-    solution: "ប្រព័ន្ធទាញ API គណនាតាមទីផ្សារកម្ពុជា បង្ហាញ Dashboard និងបង្ហោះ Telegram តាមកាលវិភាគ។",
-    capabilities: ["Real-time API", "Data jobs", "Telegram", "Dashboard"],
-    image: "/work/market-intelligence-placeholder.svg",
+    category: "SERVICE WEBSITE",
+    title: "Client Intake & Booking Website",
+    problem:
+      "អាជីវកម្មសេវាកម្មពិបាកបង្ហាញកម្មវិធីរបស់ខ្លួន និងប្រមូលព័ត៌មានអតិថិជនថ្មីតាមរបៀបមានប្រព័ន្ធ។",
+    solution:
+      "Website បង្ហាញសេវាកម្ម បង្កើតទំនុកចិត្ត ប្រមូលព័ត៌មានតាមសំណួរ និងបញ្ជូនអតិថិជនទៅកាន់ក្រុមការងារសម្រាប់ការពិគ្រោះ។",
+    capabilities: [
+      "Service Website",
+      "Client Intake",
+      "Booking",
+      "Lead Routing",
+    ],
+    status: "Client Project",
+    image: "/web.jpg",
     demoUrl: "",
   },
   {
-    category: "អចលនទ្រព្យ", // Property
-    title: "ប្រព័ន្ធគ្រប់គ្រង អាផាតមិន ខុនដូ រឺ បន្ទប់ជួល & វិក្កយបត្រប្រចាំខែ",
+    category: "MARKET INTELLIGENCE",
+    title: "Cambodia Market Intelligence Platform",
+    problem: "អាជីវកម្មត្រូវការទិន្នន័យទីផ្សារថ្មីៗ និងការផ្សាយអាប់ដេតទាន់ពេល។",
+    solution: "ប្រព័ន្ធទាញ API គណនាតាមទីផ្សារកម្ពុជា បង្ហាញ Dashboard និងបង្ហោះ Telegram តាមកាលវិភាគ។",
+    capabilities: ["Real-time API", "Data Jobs", "Telegram", "Dashboard"],
+    status: "Telegram Connected",
+    image: "/gold.png",
+    demoUrl: "",
+  },
+  {
+    category: "RENTAL SYSTEM",
+    title: "Rental Management System",
     problem: "ម្ចាស់អាផាតមិនគិតទឹក ភ្លើង និងវិក្កយបត្រដោយដៃរាល់ខែ។",
-    solution: "Dashboard សម្រាប់បន្ទប់ អ្នកជួល លេខអាន និងវិក្កយបត្រប្រចាំខែ។",
+    solution: "គ្រប់គ្រងបន្ទប់ អ្នកជួល លេខអាន វិក្កយបត្រ និងស្ថានភាពទូទាត់ក្នុង Dashboard តែមួយ។",
     capabilities: ["Rooms", "Billing", "Utilities", "Payments"],
+    status: "Internal Platform",
     image: "/work/rental-placeholder.svg",
     demoUrl: "",
   },
   {
-    category: "សេវាដោយខ្លួនឯង", // Self-service
+    category: "LAUNDRY AUTOMATION",
     title: "Self-Service Laundry System",
     problem: "ប្រព័ន្ធបោកគក់ដោយខ្លួនឯង ម៉ាស៊ីនបោកគក់គ្មាន QR payment និងពិបាកត្រួតពិនិត្យពីចម្ងាយ។",
-    solution: "អតិថិជនបង់ QR ហើយប្រព័ន្ធបើកម៉ាស៊ីន និងបង្ហាញស្ថានភាពឱ្យម្ចាស់។ ប្រើបច្ចេកវិទ្យាទំនើបដូចជា ESP32, Arduino, Smart Relay Control System, loT...",
-    capabilities: ["QR payment", "Machine", "Remote", "Dashboard"],
-    image: "/work/laundry-placeholder.svg",
+    solution: "អតិថិជនបង់ QR ហើយប្រព័ន្ធបើកម៉ាស៊ីន តាមដានស្ថានភាព និងជួយម្ចាស់គ្រប់គ្រងពីចម្ងាយ។",
+    capabilities: ["QR Payment", "ESP32", "Machine", "Dashboard"],
+    status: "IoT Prototype",
+    image: "/laundry.png",
     demoUrl: "",
+  },
+];
+
+export const WHO_WE_HELP_HEADING = "យើងជួយអាជីវកម្មដូចជា";
+export const WHO_WE_HELP = [
+  {
+    icon: "Utensils",
+    title: "ភោជនីយដ្ឋាន និងកាហ្វេ",
+    description: "មីនុយ QR កម្មង់ និងការទូទាត់។",
+  },
+  {
+    icon: "Building2",
+    title: "អាជីវកម្មជួលបន្ទប់",
+    description: "វិក្កយបត្រ ទឹក ភ្លើង និងអ្នកជួល។",
+  },
+  {
+    icon: "Shirt",
+    title: "ហាងបោកអ៊ុត",
+    description: "QR payment និងត្រួតពិនិត្យម៉ាស៊ីន។",
+  },
+  {
+    icon: "Store",
+    title: "ហាងលក់រាយ",
+    description: "កាតាឡុក កម្មង់ និងស្តុកសាមញ្ញ។",
+  },
+  {
+    icon: "HeartPulse",
+    title: "គ្លីនិក និងសេវាកម្ម",
+    description: "ការកក់ ការជូនដំណឹង និងរបាយការណ៍។",
+  },
+  {
+    icon: "Settings2",
+    title: "ប្រព័ន្ធផ្ទាល់ខ្លួន",
+    description: "បង្កើតតាមលំហូរការងារអាជីវកម្មអ្នក។",
   },
 ];
 

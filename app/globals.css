@@ -54,6 +54,32 @@ body {
     transition: background .2s ease-in-out;
 }
 
+.darkMoonVariant {
+    background-image: url(/hero-bg.webp);
+    background-position: center top;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.nightLightVariant {
+    background-image: url(/night-light.jpg);
+    background-position: center top;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.darkRedVariant {
+    background-image: url(/dark-red.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.vh-velvet-rope {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(var(--vh-gold-rgb), .3) 20%, rgba(var(--vh-gold-rgb), .5) 50%, rgba(var(--vh-gold-rgb), .3) 80%, transparent);
+}
+/* <div class="vh-velvet-rope max-w-5xl mx-auto" style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);"></div> */
+
 .vh-btn-gold {
     position: relative;
     overflow: hidden;

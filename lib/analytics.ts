@@ -13,6 +13,9 @@ export type AnalyticsEvent =
   | "hero_telegram_click"
   | "hero_view_work_click"
   | "project_demo_click"
+  | "floating_view_work_click"
+  | "floating_live_demo_click"
+  | "floating_telegram_click"
   | "final_telegram_click"
   | "business_type_selected";
 
