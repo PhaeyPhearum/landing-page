@@ -147,7 +147,7 @@ export default function Hero() {
           tabIndex={0}
           aria-label="Product preview carousel"
         >
-          <div className="absolute inset-x-0 bottom-0 top-8 sm:top-12">
+          <div className="absolute inset-x-0 bottom-0 top-8 sm:top-12 -translate-x-4">
             {orderedProjects.map((project, stackIndex) => {
               const isActive = stackIndex === 0;
 

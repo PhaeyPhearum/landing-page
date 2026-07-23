@@ -55,7 +55,7 @@ export default function FinalCtaSection() {
           target="_blank"
           rel="noopener noreferrer"
           onClick={() => track("final_telegram_click", { businessType: selected ?? "unspecified" })}
-          className="vh-btn-gold min-w-xl text-lg mt-8 inline-flex items-center justify-center rounded-xl bg-amber px-10 py-5 font-semibold text-ink shadow-[0_0_34px_rgba(232,163,61,0.24)] transition-colors hover:bg-amber-dark"
+          className="vh-btn-gold w-full max-w-xl text-lg mt-8 inline-flex items-center justify-center rounded-xl bg-amber px-10 py-5 font-semibold text-ink shadow-[0_0_34px_rgba(232,163,61,0.24)] transition-colors hover:bg-amber-dark"
         >
           {FINAL_CTA.primaryCta}
         </a>
