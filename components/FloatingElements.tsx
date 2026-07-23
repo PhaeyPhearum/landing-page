@@ -194,7 +194,7 @@ export default function FloatingElements() {
     <div
     className={[
         "pointer-events-none fixed inset-x-0 bottom-0 z-[9994]",
-        "px-3 pb-[calc(env(safe-area-inset-bottom)+12px)]",
+        "px-6 pb-[calc(env(safe-area-inset-bottom)+12px)]",
         "sm:px-6 sm:pb-6",
         "transition-all duration-500 ease-out",
         isVisible
@@ -205,7 +205,7 @@ export default function FloatingElements() {
         <div className="mx-auto flex w-full max-w-[1600px] items-end justify-between gap-3">
             {/* Left promotional element */}
             <div
-        className={`pointer-events-none fixed inset-x-0 bottom-4 z-[60] flex px-4 transition-all duration-300 sm:bottom-6 sm:justify-end sm:px-6 ${
+            className={`pointer-events-none fixed inset-x-0 bottom-4 z-[60] flex px-6 transition-all duration-300 sm:bottom-6 sm:justify-end ${
             isVisible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
         }`}
         >
@@ -226,9 +226,9 @@ export default function FloatingElements() {
         id="floating-elements-right"
         className={[
             "pointer-events-auto min-w-0 flex-1",
-            "max-w-[360px]",
+            "max-w-[460px]",
             "transition-all duration-300",
-            "sm:max-w-[340px]",
+            "md:w-full md:max-w-[360px]",
         ].join(" ")}
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
@@ -304,7 +304,7 @@ export default function FloatingElements() {
                         <ArrowRight className="h-4 w-4 shrink-0 text-amber-300 transition-transform group-hover:translate-x-1" />
                     </a>
                     ) : (
-                    <div className="relative z-10 p-4 pr-11">
+                    <div className="relative z-10 p-4">
                         <div className="flex items-start gap-3">
                             <div
                                 className={[
